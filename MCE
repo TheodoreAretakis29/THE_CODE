@@ -1,5 +1,3 @@
-# THE_CODE
-Minecraftedu final project
 -- The Final-code
 -- Table of contents:
 -- All diamond items = 50$ each
@@ -19,32 +17,43 @@ d = 15
 function Diamond_process()
 -- in this function, you will be permitted to purchase any of the diamond items, for they are all worth the same...
 local junk = turtle.getSelectedSlot(5)
+--  The above is meant to select the slot 5, and makes sure that it is in fact selecting the right slot.
     if turtle.getItemSpace(5) == b then
       print("Ah, you have exact change... are you sure that this is the item that you'd like?")
+-- Now, the above is supposed to count the amount of items within the slot, and if it all adds up, the turtle will let you purchase.
+-- You'll find this out by seeing the message which states that the turtle has in fact processed the purchase.
       turtle.select(1)
       turtle.drop()
     else
      print("sorry pal, but it seems like you don't have a sufficient amount of funds.")
-   end
+-- If that isn't the case, then the turtle will inform you that you in fact did not have enough money to make the purchase. 
+  end
 end
 -- Next, i'm hoping to repeat the same process but with Gold, and Iron ingots.
 function Gold_process()
-  turtle.getSelectedSlot(5)
-  if turtle.getItemSpace(5) == c then
+-- This function will solely process gold as currency. 
+ local junk = turtle.getSelectedSlot(6)
+  if turtle.getItemSpace(6) == c then
+-- Like before, the turtle, named Phil, will identify, and count the amount of items within the slot. 
+-- As done before, the turtle will give you the thumbs up if you have enough money, otherwise you will be receiving a rather awful message. 
      print("Ah, you have exact change... are you sure that this  is te item that you' like?")
      turtle.select(2)
      turtle.drop()
-    else print("I apologize to be the bearer of bad news but it seems like you do not have the sufficient amount of funds to purchase this item")
+-- Fun fact: If you put your currency within the wrong slot, it will mnot properly function. 
+   else print("I apologize to be the bearer of bad news but it seems like you do not have the sufficient amount of funds to purchase this item")
   end
 end
 -- And now, last but not least, Iron...
 function Iron_process()
-  turtle.getSelectedSlot(5)
-  if turtle.getItemSpace(5) == d then
+ local junk = turtle.getSelectedSlot(7)
+ -- As seen twice before, already, the turtle will select, identify and count the items within the selcted slot. 
+  if turtle.getItemSpace(7) == d then
       print("Ah why thank you for your patrionage, is that everything and are you sure that the selected item is in fact the one you'd like?")
       turtle.select(3)
+-- Again, if you still don't have enough money, the turtle will reject your command but otherwise, you're golden. 
       turtle.drop()
       else print( "I apologize but you do not have the correct amunt of funds for this item...." )
+Fun fact #2: I, the creator of this mediocre code, made all three rejection speeches similar yet different just so i could add some variety. 
      end
     end
  
