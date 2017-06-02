@@ -1,4 +1,4 @@
-- The Final-code
+-- The Final-code
 -- Table of contents:
 -- All diamond items = 50$ each
 -- All Gold items = 35$ each
@@ -59,11 +59,11 @@ function Iron_process()
  
 local function Get2work()
 -- The point of this code is to  select the proper function, so that you may buy the item type of choice.
-  if turtle.getItemCount(2) == B then
+  if turtle.getItemCount(5) == b then
     Diamond_process()
-  elseif turtle.getItemCount() == C then
-    Gold_process()
-  elseif Iron_process()
-then end
-end          
- 
+   elseif turtle.getItemCount(6) == c then
+     Gold_process()
+   elseif turtle.getItemCount(7) then
+     Iron_process()
+  end
+end
