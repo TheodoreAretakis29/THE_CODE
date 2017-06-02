@@ -48,7 +48,10 @@ function Iron_process()
      end
     end
  
-if not Diamond_process() then
-Gold_process()
-Iron_process()
+local function Get2work()
+if turtle.select(5) == "minecraft:diamond" then
+Diamond_process()
+else Gold_process()
+elseif Iron_process()
+end
 end
