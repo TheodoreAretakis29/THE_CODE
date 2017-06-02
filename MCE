@@ -1,0 +1,54 @@
+# THE_CODE
+Minecraftedu final project
+-- The Final-code
+-- Table of contents:
+-- All diamond items = 50$ each
+-- All Gold items = 35$ each
+-- All iron items = 20$ each
+-- All cobblestone items = 15$ each
+-- All wooden items- = 5$ each
+-- Welcome, the following will be my submission for term 3, and I veru much ope that it works...
+B = "minecraft:diamond"
+C = "minecraft:gold_ingot"
+D = "minecraft:iron_ingot"
+-- The above shall be the only legitamate means to purchase the items of your chosing and below, I will showhow much each one is worth.
+b = 50
+c = 35
+d = 15
+-- Now, i will begin with the code which will permit the user to give an currency to the turtle and receive an item back.
+function Diamond_process()
+-- in this function, you will be permitted to purchase any of the diamond items, for they are all worth the same...
+local junk = turtle.getSelectedSlot(5)
+    if turtle.getItemSpace(5) == b then
+      print("Ah, you have exact change... are you sure that this is the item that you'd like?")
+      turtle.select(1)
+      turtle.drop()
+    else
+     print("sorry pal, but it seems like you don't have a sufficient amount of funds.")
+   end
+end
+-- Next, i'm hoping to repeat the same process but with Gold, and Iron ingots.
+function Gold_process()
+  turtle.getSelectedSlot(5)
+  if turtle.getItemSpace(5) == c then
+     print("Ah, you have exact change... are you sure that this  is te item that you' like?")
+     turtle.select(2)
+     turtle.drop()
+    else print("I apologize to be the bearer of bad news but it seems like you do not have the sufficient amount of funds to purchase this item")
+  end
+end
+-- And now, last but not least, Iron...
+function Iron_process()
+  turtle.getSelectedSlot(5)
+  if turtle.getItemSpace(5) == d then
+      print("Ah why thank you for your patrionage, is that everything and are you sure that the selected item is in fact the one you'd like?")
+      turtle.select(3)
+      turtle.drop()
+      else print( "I apologize but you do not have the correct amunt of funds for this item...." )
+     end
+    end
+ 
+if not Diamond_process() then
+Gold_process()
+Iron_process()
+end
