@@ -62,7 +62,7 @@ local function Get2work()
   if turtle.getItemCount(2) == B then
     Diamond_process()
   elseif turtle.getItemCount() == C then
-         Gold_process()
+    Gold_process()
   elseif Iron_process()
 then end
 end          
