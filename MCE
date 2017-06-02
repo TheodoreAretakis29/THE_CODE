@@ -61,9 +61,9 @@ local function Get2work()
 -- The point of this code is to  select the proper function, so that you may buy the item type of choice.
   if turtle.getItemCount(2) == B then
     Diamond_process()
-      elseif turtle.getItemCount() == C then
+  elseif turtle.getItemCount() == C then
          Gold_process()
-          elseif Iron_process()
+  elseif Iron_process()
 then end
 end          
  
