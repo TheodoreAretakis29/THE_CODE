@@ -1,4 +1,4 @@
--- The Final-code
+- The Final-code
 -- Table of contents:
 -- All diamond items = 50$ each
 -- All Gold items = 35$ each
@@ -52,16 +52,18 @@ function Iron_process()
       turtle.select(3)
 -- Again, if you still don't have enough money, the turtle will reject your command but otherwise, you're golden.
       turtle.drop()
-      else print( "I apologize but you do not have the correct amunt of funds for this item...." )
+      else print( "I apologize but you do not have the correct amountt of funds for this item...." )
       --Fun fact #2: I, the creator of this mediocre code, made all three rejection speeches similar yet different just so i could add some variety.
      end
     end
  
 local function Get2work()
 -- The point of this code is to  select the proper function, so that you may buy the item type of choice.
-Diamond_process()
-Iron_process()
-Gold_process()
-end
+  if turtle.getItemCount(2) == B then
+    Diamond_process()
+      elseif turtle.getItemCount() == C then
+         Gold_process()
+          elseif Iron_process()
+then end
+end          
  
-Get2work()
