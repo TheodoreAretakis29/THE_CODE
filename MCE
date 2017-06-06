@@ -10,15 +10,15 @@ B = "minecraft:diamond"
 C = "minecraft:gold_ingot"
 D = "minecraft:iron_ingot"
 -- The above shall be the only legitamate means to purchase the items of your chosing and below, I will showhow much each one is worth.
-b = 50
-c = 35
+b = 8
+c = 4
 d = 15
 -- Now, i will begin with the code which will permit the user to give an currency to the turtle and receive an item back.
 function Diamond_process()
 -- in this function, you will be permitted to purchase any of the diamond items, for they are all worth the same...
-local junk = turtle.getSelectedSlot(5)
+  turtle.select(5)
 --  The above is meant to select the slot 5, and makes sure that it is in fact selecting the right slot.
-    if turtle.getItemSpace(5) == b then
+    if turtle.getItemCount(5) == b then
       print("Ah, you have exact change... are you sure that this is the item that you'd like?")
 -- Now, the above is supposed to count the amount of items within the slot, and if it all adds up, the turtle will let you purchase.
 -- You'll find this out by seeing the message which states that the turtle has in fact processed the purchase.
@@ -32,8 +32,8 @@ end
 -- Next, i'm hoping to repeat the same process but with Gold, and Iron ingots.
 function Gold_process()
 -- This function will solely process gold as currency.
- local junk = turtle.getSelectedSlot(6)
-  if turtle.getItemSpace(6) == c then
+  turtle.select(6)
+  if turtle.getItemCount(6) == c then
 -- Like before, the turtle, named Phil, will identify, and count the amount of items within the slot.
 -- As done before, the turtle will give you the thumbs up if you have enough money, otherwise you will be receiving a rather awful message.
      print("Ah, you have exact change... are you sure that this  is te item that you' like?")
@@ -45,9 +45,9 @@ function Gold_process()
 end
 -- And now, last but not least, Iron...
 function Iron_process()
- local junk = turtle.getSelectedSlot(7)
--- As seen twice before, already, the turtle will select, identify and count the items within the selcted slot.
-  if turtle.getItemSpace(7) == d then
+  turtle.select(7)
+ -- As seen twice before, already, the turtle will select, identify and count the items within the selcted slot.
+  if turtle.getItemCount(7) == d then
       print("Ah why thank you for your patrionage, is that everything and are you sure that the selected item is in fact the one you'd like?")
       turtle.select(3)
 -- Again, if you still don't have enough money, the turtle will reject your command but otherwise, you're golden.
@@ -57,13 +57,14 @@ function Iron_process()
      end
     end
  
-local function Get2work()
 -- The point of this code is to  select the proper function, so that you may buy the item type of choice.
-  if turtle.getItemCount(5) == b then
-    Diamond_process()
-   elseif turtle.getItemCount(6) == c then
-     Gold_process()
-   elseif turtle.getItemCount(7) then
-     Iron_process()
-  end
-end
+ local function Buy()
+    if turtle.getItemCount(5) == b then
+        Diamond_process()
+        elseif turtle.getItemCount(6) == c then
+            Gold_process()
+                else Iron_process()
+   end
+end   
+
+buy()
