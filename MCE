@@ -61,9 +61,9 @@ function Iron_process()
  local function Buy()
     if turtle.getItemCount(5) == b then
         Diamond_process()
-        elseif turtle.getItemCount(6) == c then
-            Gold_process()
-                else Iron_process()
+     elseif turtle.getItemCount(6) == c then
+          Gold_process()
+     else Iron_process()
    end
 end   
 
