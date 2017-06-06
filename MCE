@@ -65,6 +65,6 @@ function Iron_process()
           Gold_process()
      else Iron_process()
    end
-end   
-
+end  
+ 
 Buy()
