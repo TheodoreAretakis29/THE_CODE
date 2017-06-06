@@ -46,7 +46,7 @@ end
 -- And now, last but not least, Iron...
 function Iron_process()
  local junk = turtle.getSelectedSlot(7)
- -- As seen twice before, already, the turtle will select, identify and count the items within the selcted slot.
+-- As seen twice before, already, the turtle will select, identify and count the items within the selcted slot.
   if turtle.getItemSpace(7) == d then
       print("Ah why thank you for your patrionage, is that everything and are you sure that the selected item is in fact the one you'd like?")
       turtle.select(3)
